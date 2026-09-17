@@ -2,7 +2,7 @@
 
 > Web Application Portfolio ในรูปแบบ **Interactive Bento Dark Glam** ที่พัฒนาผ่านกระบวนการ **Vibe Coding** สำหรับการสมัครงานและโครงการสหกิจศึกษา โดดเด่นด้วยการเล่าเรื่องราวโปรเจกต์เชิงวิศวกรรมซอฟต์แวร์และการบริหารระบบ
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-ec4899?style=for-the-badge&logo=vercel&logoColor=white)](https://github.com/BMnats)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-ec4899?style=for-the-badge&logo=vercel&logoColor=white)](https://my-portfolios-8jj5hoeyn-bmnats-projects.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-BMnats-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/BMnats)
 [![Status](https://img.shields.io/badge/Status-Open_for_Opportunities-f472b6?style=for-the-badge)](https://github.com/BMnats)
 
