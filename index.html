@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pannawat Kongmuang (ปัณณวัฒน์) | Software Developer</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, Noto Sans Thai -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Syne', 'sans-serif'],
+            sans: ['Plus Jakarta Sans', 'Noto Sans Thai', 'sans-serif'],
+          },
+          colors: {
+            glam: {
+              50: '#fdf2f8',
+              100: '#fce7f3',
+              400: '#f472b6',
+              500: '#ec4899',
+              600: '#db2777',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Ambient Glow */
+    .glow-aura-1 {
+      background: radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.18) 0%, rgba(168, 85, 247, 0.08) 45%, transparent 70%);
+    }
+    .glow-aura-2 {
+      background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, transparent 65%);
+    }
+    .glass-card {
+      background: rgba(24, 15, 36, 0.65);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(244, 114, 182, 0.15);
+    }
+    .glass-card:hover {
+      border-color: rgba(244, 114, 182, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-[#09040d] text-slate-100 font-sans antialiased selection:bg-pink-500 selection:text-white relative min-h-screen">
+
+  <!-- Ambient Light Orbs -->
+  <div class="fixed top-0 left-1/4 w-[600px] h-[500px] glow-aura-1 pointer-events-none -z-10 blur-3xl"></div>
+  <div class="fixed bottom-10 right-10 w-[500px] h-[500px] glow-aura-2 pointer-events-none -z-10 blur-3xl"></div>
+
+  <!-- Floating Island Navigation -->
+  <header class="fixed top-5 left-0 right-0 z-50 px-4">
+    <nav class="max-w-4xl mx-auto glass-card rounded-full px-6 py-3 flex items-center justify-between shadow-2xl shadow-pink-950/20">
+      <a href="#hero" class="text-base font-display font-extrabold tracking-tight text-white hover:text-pink-400 transition flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-tr from-pink-500 to-rose-400 shadow-md shadow-pink-500/50"></span>
+        Pannawat<span class="text-pink-400 font-sans text-xs uppercase tracking-widest pl-1 font-semibold">.portfolio</span>
+      </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-7 text-xs font-medium uppercase tracking-wider text-slate-300">
+        <a href="#about" class="hover:text-pink-400 transition">About</a>
+        <a href="#skills" class="hover:text-pink-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-pink-400 transition">Projects</a>
+        <a href="#education" class="hover:text-pink-400 transition">Education</a>
+        <a href="#contact" class="hover:text-pink-400 transition">Contact</a>
+        <a href="portfolio 66014862.pdf" target="_blank" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-semibold transition shadow-md shadow-pink-500/20">
+          Resume CV
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menu-btn" class="md:hidden text-slate-300 hover:text-pink-400 p-1">
+        <i data-lucide="sparkles" class="w-5 h-5"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden max-w-sm mx-auto mt-2 glass-card rounded-2xl p-5 space-y-3 text-center text-sm shadow-xl">
+      <a href="#about" class="block text-slate-300 hover:text-pink-400 py-1">เกี่ยวกับฉัน</a>
+      <a href="#skills" class="block text-slate-300 hover:text-pink-400 py-1">ทักษะ & ความสามารถ</a>
+      <a href="#projects" class="block text-slate-300 hover:text-pink-400 py-1">ผลงานโปรเจกต์</a>
+      <a href="#education" class="block text-slate-300 hover:text-pink-400 py-1">ประวัติการศึกษา</a>
+      <a href="#contact" class="block text-slate-300 hover:text-pink-400 py-1">ติดต่อพูดคุย</a>
+      <a href="portfolio 66014862.pdf" target="_blank" class="inline-block px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-rose-500 text-white font-medium text-xs">ดาวน์โหลด Resume CV</a>
+    </div>
+  </header>
+
+  <!-- Hero Section: Editorial & Asymmetric -->
+  <section id="hero" class="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+    <div class="grid lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Typographic Focus -->
+      <div class="lg:col-span-7 space-y-6 text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-pink-500/10 border border-pink-500/25 text-pink-300 text-xs font-medium">
+          <span class="w-2 h-2 rounded-full bg-pink-400 animate-ping"></span>
+          ยินดีต้อนรับค่ะ • พร้อมรับโอกาสฝึกงานสหกิจศึกษา
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-display font-extrabold text-white tracking-tight leading-[1.15]">
+          ปัณณวัฒน์ <br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400">คงเมือง</span>
+        </h1>
+
+        <p class="text-lg text-slate-300 leading-relaxed max-w-xl">
+          นักศึกษาคณะเทคโนโลยีสารสนเทศ ม.ศรีปทุม หลงใหลในการพัฒนาซอฟต์แวร์และการบริหารระบบ พร้อมเรียนรู้สถาปัตยกรรมใหม่ ๆ เพื่อส่งมอบคุณภาพงานที่ดีที่สุดค่ะ
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#projects" class="px-6 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:opacity-95 text-white font-semibold transition shadow-lg shadow-pink-500/25 flex items-center gap-2">
+            สำรวจผลงาน <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+          <a href="https://github.com/BMnats" target="_blank" class="px-6 py-3 rounded-xl glass-card text-slate-200 hover:text-white font-semibold transition flex items-center gap-2">
+            <i data-lucide="github" class="w-4 h-4 text-pink-400"></i> GitHub @BMnats
+          </a>
+        </div>
+
+        <!-- Quick Contacts -->
+        <div class="pt-4 flex flex-wrap gap-5 text-xs text-slate-400">
+          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-pink-400"></i> ตลิ่งชัน, กรุงเทพฯ</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-pink-400"></i> pannawat.kon@spumail.net</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-pink-400"></i> 096-223-3322</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Bento Summary Cards -->
+      <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+        
+        <div class="col-span-2 glass-card rounded-2xl p-6 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-pink-500/10 rounded-full blur-xl"></div>
+          <p class="text-xs uppercase tracking-widest text-pink-400 font-semibold mb-1">Career Target</p>
+          <h2 class="text-xl font-display font-bold text-white">Software Developer & Systems</h2>
+          <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+            ผสานการเขียนโค้ดฝั่งหน้าบ้านที่ใส่ใจ UI/UX และระบบหลังบ้านด้วย RESTful API & MySQL ที่มีประสิทธิภาพ
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/20 border border-purple-500/30 flex items-center justify-center text-purple-300 mb-3">
+            <i data-lucide="award" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-[11px] text-slate-400 uppercase tracking-wider">Cloud AI</p>
+            <p class="text-sm font-bold text-white mt-0.5">HCCDA – AI</p>
+            <p class="text-[11px] text-pink-400">Huawei Certified</p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-5 flex flex-col justify-between">
+          <div class="w-8 h-8 rounded-lg bg-pink-500/20 border border-pink-500/30 flex items-center justify-center text-pink-300 mb-3">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+          </div>
+          <div>
+            <p class="text-[11px] text-slate-400 uppercase tracking-wider">Education</p>
+            <p class="text-sm font-bold text-white mt-0.5">Sripatum Univ.</p>
+            <p class="text-[11px] text-pink-400">CS & Software Dev</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-6 border-t border-slate-900 bg-[#0e0716]/40">
+    <div class="max-w-4xl mx-auto space-y-8">
+      
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[2px] bg-pink-500"></span>
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-pink-400">About Me</h2>
+      </div>
+
+      <div class="space-y-4 text-slate-300 leading-relaxed text-base sm:text-lg">
+        <p>
+          สวัสดีค่ะ หนูชื่อ <strong class="text-white">ปัณณวัฒน์ คงเมือง</strong> เป็นนักศึกษาหลักสูตรวิทยาการคอมพิวเตอร์และนวัตกรรมการพัฒนาซอฟต์แวร์ คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยศรีปทุมค่ะ
+        </p>
+        <p>
+          หนูเป็นคนที่มีความสุขกับการได้ลงมือเขียนโค้ดและเห็นระบบที่สร้างขึ้นทำงานได้จริงอย่างราบรื่น สนใจทั้งงานด้าน <strong class="text-pink-300">Frontend Development</strong> ที่ตอบโจทย์การใช้งานของผู้คน และงาน <strong class="text-purple-300">Backend API Architecture</strong> ที่ต้องอาศัยโครงสร้างฐานข้อมูลและการจัดการที่เป็นระเบียบ
+        </p>
+        <p>
+          พร้อมลุยงานจริงอย่างเต็มที่ มีความกระตือรือร้นในการศึกษาเทคโนโลยีใหม่ ๆ ทำงานร่วมกับเพื่อนร่วมทีมด้วยทัศนคติเชิงบวก และพร้อมนำทักษะทางเทคนิคมาสร้างคุณค่าให้กับองค์กรค่ะ
+        </p>
+      </div>
+
+      <!-- Values / Working Style -->
+      <div class="grid sm:grid-cols-3 gap-4 pt-4">
+        <div class="glass-card rounded-xl p-5 border border-pink-500/10">
+          <div class="text-pink-400 mb-2"><i data-lucide="heart-handshake" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-white text-sm">Collaborative</h3>
+          <p class="text-xs text-slate-400 mt-1">ทำงานเป็นทีมได้อย่างราบรื่น รับฟังความคิดเห็น และสื่อสารชัดเจน</p>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-pink-500/10">
+          <div class="text-pink-400 mb-2"><i data-lucide="zap" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-white text-sm">Fast Learner</h3>
+          <p class="text-xs text-slate-400 mt-1">ปรับตัวกับ Tech Stack และเครื่องมือใหม่ ๆ ได้อย่างรวดเร็ว</p>
+        </div>
+        <div class="glass-card rounded-xl p-5 border border-pink-500/10">
+          <div class="text-pink-400 mb-2"><i data-lucide="check-check" class="w-5 h-5"></i></div>
+          <h3 class="font-bold text-white text-sm">Detail-Oriented</h3>
+          <p class="text-xs text-slate-400 mt-1">ใส่ใจคุณภาพของโค้ด โครงสร้าง API และความถูกต้องของข้อมูล</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Skills: Chic Bento Grid -->
+  <section id="skills" class="py-20 px-6 border-t border-slate-900">
+    <div class="max-w-4xl mx-auto space-y-10">
+      
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[2px] bg-pink-500"></span>
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-pink-400">Technical Expertise</h2>
+        </div>
+        <span class="text-xs text-slate-400">ทักษะความเชี่ยวชาญ</span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        
+        <!-- Frontend -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex items-center gap-3 text-pink-400">
+            <i data-lucide="palette" class="w-5 h-5"></i>
+            <h3 class="font-display font-bold text-white text-base">Frontend & Design</h3>
+          </div>
+          <p class="text-xs text-slate-400">การสร้างหน้าตาเว็บที่ตอบสนองทุกหน้าจอและการจัดวาง UI ที่สวยงาม</p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3 py-1 rounded-full bg-pink-950/60 border border-pink-800/40 text-pink-200 text-xs font-medium">React</span>
+            <span class="px-3 py-1 rounded-full bg-pink-950/60 border border-pink-800/40 text-pink-200 text-xs font-medium">JavaScript</span>
+            <span class="px-3 py-1 rounded-full bg-pink-950/60 border border-pink-800/40 text-pink-200 text-xs font-medium">HTML5 & CSS</span>
+            <span class="px-3 py-1 rounded-full bg-pink-950/60 border border-pink-800/40 text-pink-200 text-xs font-medium">Figma UI/UX</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex items-center gap-3 text-purple-400">
+            <i data-lucide="server" class="w-5 h-5"></i>
+            <h3 class="font-display font-bold text-white text-base">Backend & Architecture</h3>
+          </div>
+          <p class="text-xs text-slate-400">สถาปัตยกรรมการเชื่อมต่อข้อมูลและระบบความปลอดภัยสำหรับ Web Service</p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3 py-1 rounded-full bg-purple-950/60 border border-purple-800/40 text-purple-200 text-xs font-medium">Python</span>
+            <span class="px-3 py-1 rounded-full bg-purple-950/60 border border-purple-800/40 text-purple-200 text-xs font-medium">RESTful APIs</span>
+            <span class="px-3 py-1 rounded-full bg-purple-950/60 border border-purple-800/40 text-purple-200 text-xs font-medium">JWT Authentication</span>
+          </div>
+        </div>
+
+        <!-- Database -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex items-center gap-3 text-rose-400">
+            <i data-lucide="database" class="w-5 h-5"></i>
+            <h3 class="font-display font-bold text-white text-base">Database Management</h3>
+          </div>
+          <p class="text-xs text-slate-400">การจัดรูปแบบข้อมูลเชิงสัมพันธ์และปรับแต่งความเร็วในการสืบค้น</p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3 py-1 rounded-full bg-rose-950/60 border border-rose-800/40 text-rose-200 text-xs font-medium">MySQL</span>
+            <span class="px-3 py-1 rounded-full bg-rose-950/60 border border-rose-800/40 text-rose-200 text-xs font-medium">Database Design</span>
+            <span class="px-3 py-1 rounded-full bg-rose-950/60 border border-rose-800/40 text-rose-200 text-xs font-medium">Query Optimization</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Tools -->
+        <div class="glass-card rounded-2xl p-6 space-y-4">
+          <div class="flex items-center gap-3 text-cyan-400">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+            <h3 class="font-display font-bold text-white text-base">DevOps & Cloud Tools</h3>
+          </div>
+          <p class="text-xs text-slate-400">ระบบควบคุมเวอร์ชันและการนำ Web App ขึ้นใช้งานจริงบนคลาวด์</p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-200 text-xs font-medium">Git & GitHub</span>
+            <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-200 text-xs font-medium">Postman</span>
+            <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-200 text-xs font-medium">Vercel</span>
+            <span class="px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-800/40 text-cyan-200 text-xs font-medium">Render</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section: Storytelling Evidence -->
+  <section id="projects" class="py-20 px-6 border-t border-slate-900 bg-[#0e0716]/30">
+    <div class="max-w-4xl mx-auto space-y-12">
+      
+      <div class="space-y-2">
+        <div class="flex items-center gap-3">
+          <span class="w-8 h-[2px] bg-pink-500"></span>
+          <h2 class="text-xs font-semibold uppercase tracking-widest text-pink-400">Selected Work</h2>
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-display font-bold text-white">ผลงานโปรเจกต์ที่ภาคภูมิใจ</h3>
+        <p class="text-sm text-slate-400">เล่าผ่านหลักการ Problem, Solution และบทบาทหน้าที่จริงค่ะ</p>
+      </div>
+
+      <!-- FEATURED PROJECT: Eduguide -->
+      <div class="glass-card rounded-3xl p-8 sm:p-10 border border-pink-500/30 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-pink-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="px-3 py-1 rounded-full bg-pink-500 text-white font-bold text-xs uppercase tracking-wider shadow-md shadow-pink-500/30">
+              Featured Showcase
+            </span>
+            <span class="text-xs text-pink-300/80 font-mono">AI & RAG Innovation</span>
+          </div>
+
+          <div>
+            <h4 class="text-2xl sm:text-3xl font-display font-extrabold text-white">Eduguide</h4>
+            <p class="text-pink-300 text-sm mt-1">RAG Chatbot สำหรับการค้นหาตัวเองเพื่อการศึกษาที่เหมาะสมที่สุด</p>
+          </div>
+
+          <!-- Problem & Solution Cards -->
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-5 rounded-2xl bg-black/40 border border-pink-500/10 space-y-2">
+              <span class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="help-circle" class="w-4 h-4"></i> The Problem
+              </span>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                นักเรียนและผู้เรียนส่วนใหญ่ไม่แน่ใจในความถนัดของตนเอง ข้อมูลสาขาวิชากระจัดกระจาย และการสอบถามกับ AI ปกติมักได้คำแนะนำที่ผิวเผิน ไม่ตรงกับบริบทหลักสูตรในชีวิตจริง
+              </p>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-black/40 border border-pink-500/10 space-y-2">
+              <span class="text-xs font-bold text-pink-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="sparkle" class="w-4 h-4"></i> The Solution
+              </span>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                ออกแบบระบบสนทนาอัจฉริยะด้วยเทคนิค Retrieval-Augmented Generation (RAG) เชื่อมต่อคลังข้อมูลหลักสูตรและการวิเคราะห์บุคลิกภาพ ให้คำตอบที่แม่นยำและช่วยค้นหาเส้นทางการเรียนที่ลงตัว
+              </p>
+            </div>
+          </div>
+
+          <!-- Role Breakdown -->
+          <div class="p-4 rounded-xl bg-pink-950/20 border border-pink-500/20 space-y-2">
+            <p class="text-xs font-semibold uppercase tracking-wider text-pink-300">My Role & Responsibility</p>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              รับผิดชอบการออกแบบสถาปัตยกรรม RESTful API สำหรับการเชื่อมต่อแชทบอท จัดเตรียมฐานข้อมูลอ้างอิง และมีส่วนร่วมในการวาง Prompt Pipeline ให้ระบบตอบคำถามได้อย่างราบรื่นและมีประสิทธิภาพค่ะ
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1 rounded-lg bg-pink-900/40 text-pink-200 border border-pink-800/40 text-xs">Python</span>
+              <span class="px-3 py-1 rounded-lg bg-pink-900/40 text-pink-200 border border-pink-800/40 text-xs">RAG Pattern</span>
+              <span class="px-3 py-1 rounded-lg bg-pink-900/40 text-pink-200 border border-pink-800/40 text-xs">REST APIs</span>
+              <span class="px-3 py-1 rounded-lg bg-pink-900/40 text-pink-200 border border-pink-800/40 text-xs">MySQL</span>
+            </div>
+            <a href="https://github.com/BMnats" target="_blank" class="text-xs font-semibold text-pink-400 hover:text-pink-300 flex items-center gap-1 transition">
+              <i data-lucide="github" class="w-4 h-4"></i> ดูโค้ดบน GitHub @BMnats
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECONDARY PROJECTS GRID -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        
+        <!-- FindCarPark -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center text-pink-400">
+              <i data-lucide="car" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-xl font-display font-bold text-white">FindCarPark</h4>
+            <p class="text-xs text-pink-400 font-medium">แอปพลิเคชันค้นหาลานจอดรถในสถานที่กำหนด</p>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              ช่วยแก้ปัญหาการเสียเวลาวนหาที่จอดรถ ออกแบบหน้าจอค้นหาที่เรียบง่าย ใช้งานสะดวกรวดเร็วบนมือถือ พร้อมระบบจัดเก็บข้อมูลพิกัดลานจอด
+            </p>
+          </div>
+          <div class="space-y-3 pt-2">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 text-xs">React</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 text-xs">JavaScript</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 text-xs">Figma</span>
+            </div>
+            <a href="https://github.com/BMnats" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-pink-400 hover:text-pink-300 font-semibold pt-1">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> ไปที่ GitHub Repository
+            </a>
+          </div>
+        </div>
+
+        <!-- Stockmanage -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between space-y-6">
+          <div class="space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+              <i data-lucide="boxes" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-xl font-display font-bold text-white">Stockmanage</h4>
+            <p class="text-xs text-purple-400 font-medium">ระบบบริหารสต๊อกสินค้าสำหรับธุรกิจขนาดเล็ก-กลาง</p>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              พัฒนาระบบหลังบ้านเพื่อควบคุมจำนวนสินค้าเข้า-ออก คำนวณยอดสต๊อกคงคลัง และระบบรักษาความปลอดภัยในการล็อกอินด้วย JWT Authentication
+            </p>
+          </div>
+          <div class="space-y-3 pt-2">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 text-xs">Python</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 text-xs">MySQL</span>
+              <span class="px-2.5 py-0.5 rounded-full bg-slate-900 text-slate-300 text-xs">JWT Auth</span>
+            </div>
+            <a href="https://github.com/BMnats" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 font-semibold pt-1">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i> ไปที่ GitHub Repository
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section id="education" class="py-20 px-6 border-t border-slate-900">
+    <div class="max-w-4xl mx-auto space-y-10">
+      
+      <div class="flex items-center gap-3">
+        <span class="w-8 h-[2px] bg-pink-500"></span>
+        <h2 class="text-xs font-semibold uppercase tracking-widest text-pink-400">Credentials & Background</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Education Card -->
+        <div class="glass-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="px-3 py-1 rounded-full bg-pink-500/10 text-pink-400 text-xs font-mono">2023 – ปัจจุบัน</span>
+            <i data-lucide="sparkle" class="w-4 h-4 text-pink-400"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-display font-bold text-white">มหาวิทยาลัยศรีปทุม (SPU)</h3>
+            <p class="text-sm text-pink-300 mt-0.5">ปริญญาตรี คณะเทคโนโลยีสารสนเทศ</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">
+              สาขาวิทยาการคอมพิวเตอร์และนวัตกรรมการพัฒนาซอฟต์แวร์ มุ่งเน้นการออกแบบและสร้างสรรค์ระบบเทคโนโลยีสารสนเทศที่ตอบโจทย์ภาคธุรกิจ
+            </p>
+          </div>
+        </div>
+
+        <!-- Certifications List -->
+        <div class="space-y-4">
+          
+          <div class="glass-card rounded-2xl p-5 flex items-center justify-between">
+            <div class="space-y-1">
+              <span class="text-[11px] text-pink-400 font-semibold uppercase">Huawei Cloud</span>
+              <h4 class="text-sm font-bold text-white">HCCDA – AI (Associate)</h4>
+              <p class="text-xs text-slate-400">ใบรับรองทักษะด้านปัญญาประดิษฐ์และคลาวด์เทคโนโลยี</p>
+            </div>
+            <span class="text-xs text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20 font-medium">Verified</span>
+          </div>
+
+          <div class="glass-card rounded-2xl p-5 flex items-center justify-between">
+            <div class="space-y-1">
+              <span class="text-[11px] text-pink-400 font-semibold uppercase">Code.org (Aug 2023)</span>
+              <h4 class="text-sm font-bold text-white">Insights from Data and AI</h4>
+              <p class="text-xs text-slate-400">ความรู้พื้นฐานในการวิเคราะห์ข้อมูลและเทคโนโลยี AI</p>
+            </div>
+            <span class="text-xs text-pink-400 bg-pink-500/10 px-3 py-1 rounded-full border border-pink-500/20 font-medium">Verified</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 border-t border-slate-900 bg-gradient-to-b from-[#0e0716] to-[#09040d]">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      
+      <div class="space-y-3">
+        <span class="px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-semibold uppercase tracking-wider">
+          Let's Connect
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white">พร้อมเริ่มงานและร่วมสร้างสรรค์ผลงานค่ะ</h2>
+        <p class="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
+          สามารถติดต่อเพื่อนัดสัมภาษณ์งาน สอบถามข้อมูลเพิ่มเติม หรือพูดคุยเรื่องโอกาสในการฝึกงานสหกิจศึกษาได้ตลอดเวลานะคะ
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <a href="mailto:pannawat.kon@spumail.net" class="flex items-center gap-2 px-6 py-3.5 rounded-2xl glass-card hover:bg-pink-950/40 text-slate-200 hover:text-white transition shadow-lg">
+          <i data-lucide="mail" class="w-4 h-4 text-pink-400"></i>
+          pannawat.kon@spumail.net
+        </a>
+        <a href="tel:0962233322" class="flex items-center gap-2 px-6 py-3.5 rounded-2xl glass-card hover:bg-pink-950/40 text-slate-200 hover:text-white transition shadow-lg">
+          <i data-lucide="phone" class="w-4 h-4 text-pink-400"></i>
+          096-223-3322
+        </a>
+        <a href="https://github.com/BMnats" target="_blank" class="flex items-center gap-2 px-6 py-3.5 rounded-2xl glass-card hover:bg-pink-950/40 text-slate-200 hover:text-white transition shadow-lg">
+          <i data-lucide="github" class="w-4 h-4 text-pink-400"></i>
+          github.com/BMnats
+        </a>
+      </div>
+
+      <div class="pt-12 border-t border-pink-950/40 text-xs text-slate-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>© 2026 ปัณณวัฒน์ คงเมือง (Pannawat Kongmuang). All rights reserved.</p>
+        <p class="text-pink-400/80">Crafted with Vibe Coding • Responsive & Bento Dark Glam</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Lucide Icon Renderer & Mobile Menu Toggle Script -->
+  <script>
+    lucide.createIcons();
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
+</body>
+</html>
